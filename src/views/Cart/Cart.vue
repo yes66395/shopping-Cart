@@ -45,11 +45,6 @@ import { mapState } from 'vuex';
 
 export default {
 	name: 'shoppingCart',
-	data() {
-		return {
-			countNumber: 1,
-		};
-	},
 	components: {
 		ProductInfo,
 		Caculator,
@@ -63,18 +58,13 @@ export default {
 	methods: {
 		//store index.js嚴格模式開啟功能會出問題 已經變動到資料，但不知道怎麼解決
 		//請小心，如果可以幫我改寫最好XD
+		//這段函數已經修復
 		countMount(item, typeButton = 'mius') {
-			const { id, price } = item;
-			const getTotalPriceObject = { id, price };
-			switch (typeButton) {
-				case 'plus':
-					item.count === 99 ? false : item.count++;
-					break;
-				default:
-					item.count > 1 ? item.count-- : (item.count = 1);
-					break;
-			}
-			return this.$store.dispatch('getProductTotalPrice', getTotalPriceObject);
+			const { id } = item;
+			return this.$store.dispatch('getProductTotalPrice', {
+				typeButton,
+				id,
+			});
 		},
 		selectProduct(id) {
 			return this.$router.push({
