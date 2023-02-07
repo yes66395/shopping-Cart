@@ -16,10 +16,23 @@ export default {
 		const cartItemCount = state.cartData.find((item) => Number(item.id) === data);
 		return cartItemCount.count++;
 	},
+	//這裡是計數器元件的mutation
 	SET_TOTAL_PRICE(state, data) {
-		return state.cartData.reduce((prev, current) => {
-			return prev + current.price * current.count;
-		}, 0);
+		const { typeButton, id } = data;
+		return state.cartData.find((item) => {
+			if (Number(item.id) === id) {
+				switch (typeButton) {
+					case 'plus':
+						item.totalMount == 99 ? false : item.totalMount++;
+						break;
+					case 'minus':
+						item.totalMount > 1 ? item.totalMount-- : (item.totalMount = 1);
+						break;
+					default:
+						break;
+				}
+			}
+		});
 	},
 	DELETE_SINGLE_PRODUCT(state, data) {
 		return state.cartData.filter((item, index) => {
