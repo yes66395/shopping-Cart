@@ -23,10 +23,10 @@ export default {
 			if (Number(item.id) === id) {
 				switch (typeButton) {
 					case 'plus':
-						item.totalMount == 99 ? false : item.totalMount++;
+						item.count == 99 ? false : item.count++;
 						break;
 					case 'minus':
-						item.totalMount > 1 ? item.totalMount-- : (item.totalMount = 1);
+						item.count > 1 ? item.count-- : (item.count = 1);
 						break;
 					default:
 						break;
