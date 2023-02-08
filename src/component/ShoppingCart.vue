@@ -1,14 +1,7 @@
 <template>
 	<header class="title-container">
 		<router-link class="title" to="/Home">雜物商城</router-link>
-		<input
-			type="search"
-			class="search-input"
-			v-model.lazy.trim="keyWords"
-			@keyup.enter="searchKey(keyWords)"
-			placeholder="請輸入要查詢的商品名稱"
-		/>
-		<button type="button" @click="searchKey(keyWords)" class="search-button">送出</button>
+		<Search/>
 		<div class="shopping-Cart-container">
 			<router-link class="shopping-Cart" :to="{ name: 'cart' }">購物車({{ cartTotal }})</router-link>
 		</div>
@@ -17,18 +10,11 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import Search from './search/Search.vue';
 export default {
-	data() {
-		return {
-			keyWords: '',
-		};
+	components: {
+		Search,
 	},
-	methods: {
-		searchKey(word) {
-			this.$store.dispatch('getFilterProduct', word);
-		},
-	},
-
 	computed: {
 		...mapGetters({
 			cartTotal: 'getShoppingCart',
