@@ -53,7 +53,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	margin: 16px auto 0 auto;
+	margin: 32px auto 0 auto;
 	padding: 8px 0;
 }
 .totalPrice,

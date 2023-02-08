@@ -1,6 +1,5 @@
 .product-container {
     display: flex;
-
     width: 100%;
     box-sizing: border-box;
     background: linear-gradient(180deg, #001e40, #002d5f) no-repeat;

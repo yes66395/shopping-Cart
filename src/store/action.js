@@ -1,5 +1,6 @@
 import axios from 'axios';
 export default {
+	//拿到商品分類
 	getcateGories({ commit }) {
 		axios.get('https://api.escuelajs.co/api/v1/categories').then((res) => {
 			commit('SET_CATEGORIES', res.data);
@@ -14,23 +15,25 @@ export default {
 		}
 		getData(id);
 	},
+	//查詢商品功能
 	getFilterProduct({ commit }, payload) {
 		async function filterProduct(title) {
 			const res = await axios.get(`https://api.escuelajs.co/api/v1/products/?title=${title}`);
 			commit('SET_FILTER_PRODUCT', res.data);
 		}
+
 		filterProduct(payload);
 	},
 	//新增至購物車
 	addProductToCart({ commit, state }, payload) {
 		const { id, title, price, description } = payload;
 		const cartItem = state.cartData.find((item) => Number(item.id) === id);
-		const cartObject = { id, title, images: payload.images[0], price, count: 1, description };
+		const cartObject = { id, title, images: payload.images[0], price, totalMount: 1, description };
 		return !cartItem ? commit('CART_ADD_PRODUCT_TO_CART', cartObject) : commit('CART_ADD_PRODUCT_COUNT', id);
 	},
-	//拿取全部商品價格
+	//握取計數器
 	getProductTotalPrice({ commit }, payload) {
-		commit('SET_TOTAL_PRICE', payload);
+		commit('SET_TOTAL_COUNT', payload);
 	},
 
 	//刪除單一商品

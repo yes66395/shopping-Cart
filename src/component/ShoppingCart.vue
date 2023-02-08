@@ -5,10 +5,10 @@
 			type="search"
 			class="search-input"
 			v-model.lazy.trim="keyWords"
-			@keyup.enter="searchKey"
+			@keyup.enter="searchKey(keyWords)"
 			placeholder="請輸入要查詢的商品名稱"
 		/>
-		<button type="button" @click="searchKey" class="search-button">送出</button>
+		<button type="button" @click="searchKey(keyWords)" class="search-button">送出</button>
 		<div class="shopping-Cart-container">
 			<router-link class="shopping-Cart" :to="{ name: 'cart' }">購物車({{ cartTotal }})</router-link>
 		</div>
@@ -24,9 +24,8 @@ export default {
 		};
 	},
 	methods: {
-		searchKey() {
-			this.$store.dispatch('getFilterProduct', this.keyWords);
-			this.keyWords = '';
+		searchKey(word) {
+			this.$store.dispatch('getFilterProduct', word);
 		},
 	},
 

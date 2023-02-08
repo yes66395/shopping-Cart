@@ -10,7 +10,7 @@
 			<span class="product-price">${{ productListItem.price }}</span>
 			<button type="button" class="add-shopp-cart-btn" @click="addCart(productListItem)">加入購物車</button>
 		</div>
-		<span v-if="productList.length === 0 && !Array.isArray(keywords)" class="api-error">Loading...</span>
+		<span v-if="loadingText" class="api-error">Loading...</span>
 		<span class="api-error" style="color: #fff" v-if="Array.isArray(keywords)"
 			>很抱歉! 搜尋不到你要的資料，請再試一次</span
 		>
@@ -21,6 +21,7 @@
 import { mapState } from 'vuex';
 export default {
 	name: 'Product',
+
 	mounted() {
 		this.$store.dispatch('getcateGories');
 	},
@@ -40,7 +41,11 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(['productList', 'keywords']),
+		...mapState(['productList']),
+		...mapState(['keywords']),
+		loadingText() {
+			return this.productList.length === 0 && !Array.isArray(this.keywords);
+		},
 	},
 };
 </script>

@@ -3,6 +3,5 @@ export default {
 	productList: [],
 	cartData: [],
 	checkData: [],
-
 	keywords: '',
 };

@@ -12,11 +12,5 @@ export default defineConfig({
 			'@': fileURLToPath(new URL('./src', import.meta.url)),
 		},
 	},
-	server: {
-		proxy: {
-			'^/api': {
-				target: 'https://api.escuelajs.co/api/v1/products' || 'https://api.escuelajs.co/api/v1/categories',
-			},
-		},
-	},
+	server: {},
 });

@@ -21,14 +21,8 @@
 <script>
 import shoppingCart from '../component/ShoppingCart.vue';
 import Product from '../component/Product.vue';
-
 import { mapState } from 'vuex';
 export default {
-	data() {
-		return {
-			filterKey: '',
-		};
-	},
 	components: {
 		Product,
 		shoppingCart,
