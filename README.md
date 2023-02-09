@@ -4,6 +4,7 @@
 *注意!如果什麼都沒有，出現Loading文字，極大的可能是api壞掉，api的來源為這<a href="https://fakeapi.platzi.com/en/rest/products">點我</a>
 <br/>
 完成結果:
+<br/>
 <img src="https://github.com/yes66395/POSData/blob/main/%E5%9C%96%E7%89%872.png?raw=true" width="300" />
 <br/>
 <img src="https://github.com/yes66395/POSData/blob/main/%E5%9C%96%E7%89%871.png" width="300" />
