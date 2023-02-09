@@ -5,7 +5,7 @@
 <br/>
 完成結果:
 <br/>
-<img src="https://github.com/yes66395/POSData/blob/main/%E5%9C%96%E7%89%872.png?raw=true"  />
+<img src="https://github.com/yes66395/POSData/blob/main/%E5%9C%96%E7%89%873.png?raw=true"  />
 <br/>
 <img src="https://github.com/yes66395/POSData/blob/main/%E5%9C%96%E7%89%871.png" />
 
