@@ -42,7 +42,7 @@ export default {
 		return (state.cartData = []);
 	},
 
-	ADD_CHECK_DATA(state, data) {
+	ADD_CHECK_DATA(state) {
 		switch (state.checkData.length) {
 			case 0:
 				state.checkData = state.cartData;
@@ -54,7 +54,6 @@ export default {
 		}
 	},
 	SET_FILTER_PRODUCT(state, data) {
-		console.log(data);
 		state.keywords = data;
 		state.productList = data;
 		return state.productList.filter((item) => (item.title.match(state.keywords) ? true : false));

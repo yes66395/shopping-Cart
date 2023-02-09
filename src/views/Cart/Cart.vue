@@ -55,6 +55,9 @@ export default {
 			['checkData'],
 		),
 	},
+	mounted() {
+		localStorage.getItem('cartData');
+	},
 	methods: {
 		//store index.js嚴格模式開啟功能會出問題 已經變動到資料，但不知道怎麼解決
 		//請小心，如果可以幫我改寫最好XD

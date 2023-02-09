@@ -11,7 +11,7 @@
 			<button type="button" class="add-shopp-cart-btn" @click="addCart(productListItem)">加入購物車</button>
 		</div>
 		<span v-if="loadingText" class="api-error">Loading...</span>
-		<span class="api-error" style="color: #fff" v-if="Array.isArray(keywords)"
+		<span class="api-error" style="color: #fff" v-if="Array.isArray(keywords) && keywords.length === 0"
 			>很抱歉! 搜尋不到你要的資料，請再試一次</span
 		>
 	</section>
@@ -27,8 +27,8 @@ export default {
 	},
 	methods: {
 		addCart(item) {
-			const cartObject = { id: item.id, title: item.title, price: item.price, images: item.images };
-			this.$store.dispatch('addProductToCart', cartObject);
+			const { id, title, price, images } = item;
+			this.$store.dispatch('addProductToCart', { id, title, price, images });
 		},
 		selectProduct(id) {
 			if (!id) return;

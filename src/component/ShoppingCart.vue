@@ -1,7 +1,7 @@
 <template>
 	<header class="title-container">
 		<router-link class="title" to="/Home">雜物商城</router-link>
-		<Search/>
+		<Search />
 		<div class="shopping-Cart-container">
 			<router-link class="shopping-Cart" :to="{ name: 'cart' }">購物車({{ cartTotal }})</router-link>
 		</div>
@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
 import Search from './search/Search.vue';
+import { mapGetters } from 'vuex';
 export default {
 	components: {
 		Search,

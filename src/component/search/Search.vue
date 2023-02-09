@@ -3,11 +3,13 @@
 		<input
 			type="search"
 			class="search-input"
-			v-model.lazy.trim="keyWords"
+			v-model.trim="keyWords"
 			@keyup.enter="searchKey(keyWords)"
 			placeholder="請輸入要查詢的商品名稱"
 		/>
-		<button type="button" @click="searchKey(keyWords)" class="search-button">送出</button>
+		<button type="button" @click="searchKey(keyWords)" @touchstart.stop="searchKey(keyWords)" class="search-button">
+			送出
+		</button>
 	</div>
 </template>
 
@@ -20,8 +22,10 @@ export default {
 		};
 	},
 	methods: {
-		searchKey(word) {
-			return word === '' ? false : this.$store.dispatch('getFilterProduct', word);
+		searchKey(words) {
+			this.$store.dispatch('getFilterProduct', {
+				words,
+			});
 		},
 	},
 };
@@ -45,7 +49,7 @@ export default {
 }
 .search-input::placeholder {
 	text-align: center;
-	font-size: 1.1rem;
+	font-size: 0.8rem;
 }
 .search-container .search-button {
 	width: 60px;
@@ -58,4 +62,3 @@ export default {
 	color: #e5e57e;
 }
 </style>
-

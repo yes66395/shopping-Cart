@@ -17,18 +17,19 @@ export default {
 	},
 	//查詢商品功能
 	getFilterProduct({ commit }, payload) {
+		let { words } = payload;
 		async function filterProduct(title) {
-			const res = await axios.get(`https://api.escuelajs.co/api/v1/products/?title=${title}`);
+			const res = await axios.get(`https://api.escuelajs.co/api/v1/products/?title=${String(title)}`);
 			commit('SET_FILTER_PRODUCT', res.data);
 		}
-
-		filterProduct(payload);
+		filterProduct(words);
 	},
 	//新增至購物車
 	addProductToCart({ commit, state }, payload) {
 		const { id, title, price, description } = payload;
 		const cartItem = state.cartData.find((item) => Number(item.id) === id);
 		const cartObject = { id, title, images: payload.images[0], price, totalMount: 1, description };
+		localStorage.setItem('cartData', JSON.stringify(state.cartData));
 		return !cartItem ? commit('CART_ADD_PRODUCT_TO_CART', cartObject) : commit('CART_ADD_PRODUCT_COUNT', id);
 	},
 	//握取計數器
