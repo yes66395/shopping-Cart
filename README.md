@@ -5,9 +5,9 @@
 <br/>
 完成結果:
 <br/>
-<img src="https://github.com/yes66395/POSData/blob/main/%E5%9C%96%E7%89%872.png?raw=true" width="300" />
+<img src="https://github.com/yes66395/POSData/blob/main/%E5%9C%96%E7%89%872.png?raw=true"  />
 <br/>
-<img src="https://github.com/yes66395/POSData/blob/main/%E5%9C%96%E7%89%871.png" width="300" />
+<img src="https://github.com/yes66395/POSData/blob/main/%E5%9C%96%E7%89%871.png" />
 
 ## 用到的技術
 
