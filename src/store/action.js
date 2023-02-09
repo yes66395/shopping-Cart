@@ -29,7 +29,7 @@ export default {
 		const { id, title, price, description } = payload;
 		const cartItem = state.cartData.find((item) => Number(item.id) === id);
 		const cartObject = { id, title, images: payload.images[0], price, totalMount: 1, description };
-		localStorage.setItem('cartData', JSON.stringify(state.cartData));
+
 		return !cartItem ? commit('CART_ADD_PRODUCT_TO_CART', cartObject) : commit('CART_ADD_PRODUCT_COUNT', id);
 	},
 	//握取計數器

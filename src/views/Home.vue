@@ -44,6 +44,4 @@ export default {
 	},
 };
 </script>
-<style scoped lang="css">
-@import '../css/home.css';
-</style>
+<style scoped lang="css" src="../css/home.css"></style>
