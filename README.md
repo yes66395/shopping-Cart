@@ -33,13 +33,15 @@
 
 ## 安裝步驟
 ```
-git clone https://github.com/yes66395/POSdemo.git //把這個項目複製下來
+git clone https://github.com/yes66395/shopping-Cart.git //把這個項目複製下來
 
 cd 到這個項目的資料夾 
 
-npm install //安裝該項目需要套件
+npm install //安裝該項目所需要套件
 
-//開啟服務
+//啟動服務
 npm run dev 
+
+服務為 http://127.0.0.1:5173/
 
 ```
