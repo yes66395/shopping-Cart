@@ -7,7 +7,7 @@
 <br/>
 <img src="https://github.com/yes66395/POSData/blob/main/%E5%9C%96%E7%89%873.png?raw=true"  />
 <br/>
-<img src="https://github.com/yes66395/POSData/blob/main/%E5%9C%96%E7%89%871.png" />
+<img src="https://github.com/yes66395/POSData/blob/main/%E5%9C%96%E7%89%874.png?raw=true" />
 
 ## 用到的技術
 
@@ -48,5 +48,6 @@ npm run dev
 說實話，我以為很簡單，但實際上，對我這種完全沒寫過的人來講還滿困難，我是第一次寫這個，看輕了購物車整體的邏輯。<br/>
 最大的問題還是在於Vuex與Vue-Router，其中Vuex我卡了很久，到現在也是懵懂懵懂。
 
-有問題 首頁CSS重新改寫
+搜尋功能有問題，需要一點時間修復
+
 
