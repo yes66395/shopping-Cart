@@ -139,6 +139,11 @@ th {
         font-size: 16px;
         margin: 0;
     }
+
+    .no-product {
+        font-size: 1.2rem;
+        top: 20%;
+    }
 }
 
 @media (max-width: 414px) {

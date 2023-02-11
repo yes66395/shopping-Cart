@@ -43,10 +43,27 @@ export default {
 	color: #fff;
 	display: flex;
 	justify-content: flex-end;
-	align-items: center;
 }
 .shopping-Cart {
 	color: #fff;
 	display: block;
+	font-size: 1.2rem;
+	text-align: right;
+}
+
+@media (max-width: 394px) and (min-width: 390px) {
+	.shopping-Cart-container {
+		justify-content: space-around;
+	}
+}
+@media (max-width: 376px) {
+	.shopping-Cart-container {
+		justify-content: space-around;
+	}
+}
+@media (max-width: 415px) {
+	.shopping-Cart-container {
+		justify-content: space-around;
+	}
 }
 </style>

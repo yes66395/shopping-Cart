@@ -87,3 +87,7 @@ img {
 input {
     outline: none;
 }
+
+* {
+    -webkit-overflow-scrolling: touch;
+}

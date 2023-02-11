@@ -1,7 +1,7 @@
 <template>
 	<div class="search-container">
 		<input
-			type="search"
+			type="text"
 			class="search-input"
 			v-model.trim="keyWords"
 			@keyup.enter="searchKey(keyWords)"
@@ -26,6 +26,7 @@ export default {
 			this.$store.dispatch('getFilterProduct', {
 				words,
 			});
+			this.keyWords = '';
 		},
 	},
 };

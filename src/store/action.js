@@ -17,11 +17,13 @@ export default {
 	},
 	//查詢商品功能
 	getFilterProduct({ commit }, payload) {
-		let { words } = payload;
+		const { words } = payload;
 		async function filterProduct(title) {
 			const res = await axios.get(`https://api.escuelajs.co/api/v1/products/?title=${String(title)}`);
-			commit('SET_FILTER_PRODUCT', res.data);
+			const { data } = res;
+			data.length === 0 ? Promise.reject('沒有資料') : commit('SET_FILTER_PRODUCT', data);
 		}
+
 		filterProduct(words);
 	},
 	//新增至購物車

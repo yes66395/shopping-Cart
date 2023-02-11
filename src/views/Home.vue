@@ -1,47 +1,23 @@
 <template>
-	<shopping-Cart />
+	<Shopping-Cart />
 	<section class="product-container">
-		<section class="product-nav-container">
-			<ul class="product-nav">
-				<li class="product-nav-item">
-					<span class="product-nav-name" @click="getAllProduct(0)">All</span>
-				</li>
-				<li class="product-nav-item" v-for="productTitle in cateGories" @click="getAllProduct(productTitle.id)">
-					<span class="product-nav-name">
-						{{ productTitle.name }}
-					</span>
-				</li>
-			</ul>
-		</section>
-		<!---商品主模組-->
+		<!-- 商品分類列表 -->
+		<Product-Nav-Bar />
+		<!---所有商品列表-->
 		<Product />
 	</section>
 </template>
 
 <script>
-import shoppingCart from '../component/ShoppingCart.vue';
-import Product from '../component/Product.vue';
-import { mapState } from 'vuex';
+import ShoppingCart from '../component/ShoppingCart.vue';
+import Product from '../component/Product/Product.vue';
+import ProductNavBar from '../component/ProductNavBar/ProductNavBar.vue';
 export default {
 	components: {
 		Product,
-		shoppingCart,
-	},
-	mounted() {
-		this.$store.dispatch('getcateGories');
-		this.$store.dispatch('getProductList', {
-			id: sessionStorage.getItem('id') || 0,
-		});
-	},
-	methods: {
-		async getAllProduct(id) {
-			sessionStorage.setItem('id', JSON.stringify(id));
-			await this.$store.dispatch('getProductList', { id });
-		},
-	},
-	computed: {
-		...mapState(['cateGories']),
+		ShoppingCart,
+		ProductNavBar,
 	},
 };
 </script>
-<style scoped lang="css" src="../css/home.css"></style>
+<style lang="css" scoped src="../css/home.css"></style>

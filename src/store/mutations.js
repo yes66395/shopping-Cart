@@ -56,10 +56,9 @@ export default {
 	SET_FILTER_PRODUCT(state, data) {
 		state.productList = data;
 		return state.productList.filter((item, index) => {
-			if (item.title === state.keywords) {
-				return true;
+			if (item.title) {
+				return item;
 			} else {
-				window.alert('抱歉!搜尋不到你要的資料');
 				return false;
 			}
 		});
