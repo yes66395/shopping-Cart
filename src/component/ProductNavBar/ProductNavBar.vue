@@ -35,6 +35,7 @@ export default {
 		async getAllProduct(id, index) {
 			sessionStorage.setItem('id', JSON.stringify(id));
 			await this.$store.dispatch('getProductList', { id });
+			await this.$store.commit('IS_HAVE_DATA');
 			this.curIndex = index;
 		},
 	},
