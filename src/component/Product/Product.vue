@@ -22,6 +22,7 @@
 		</div>
 
 		<span class="api-error" v-if="loadingText">Loading...</span>
+		<span class="api-error" v-if="!isHaveData" style="left: 20px">抱歉!查無商品</span>
 	</section>
 </template>
 
@@ -48,9 +49,9 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(['productList']),
+		...mapState(['productList', 'isHaveData']),
 		loadingText() {
-			return this.productList.length === 0;
+			return this.productList.length === 0 && this.isHaveData;
 		},
 	},
 };
