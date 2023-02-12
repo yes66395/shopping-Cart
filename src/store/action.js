@@ -21,7 +21,7 @@ export default {
 		async function filterProduct(title) {
 			const res = await axios.get(`https://api.escuelajs.co/api/v1/products/?title=${String(title)}`);
 			const { data } = res;
-			data.length === 0 ? Promise.reject('沒有資料') : commit('SET_FILTER_PRODUCT', data);
+			 commit('SET_FILTER_PRODUCT', data);
 		}
 
 		filterProduct(words);
