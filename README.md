@@ -3,6 +3,8 @@
 
 *注意!如果什麼都沒有，出現Loading文字，極大的可能是api壞掉，api的來源為這<a href="https://fakeapi.platzi.com/en/rest/products">點我</a>
 <br/>
+左邊的Navigation，有時候文字會突然不一樣，是因為api的問題。見諒。
+<br/>
 完成結果:
 <br/>
 <img src="https://github.com/yes66395/POSData/blob/main/%E5%9C%96%E7%89%873.png?raw=true"  />
