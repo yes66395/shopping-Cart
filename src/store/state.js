@@ -3,4 +3,5 @@ export default {
 	productList: [],
 	cartData: [],
 	checkData: [],
+	isHaveData: true,
 };
