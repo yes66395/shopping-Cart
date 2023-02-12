@@ -55,12 +55,20 @@ export default {
 	},
 	SET_FILTER_PRODUCT(state, data) {
 		state.productList = data;
+		const productListLength = state.productList.length;
+		switch (productListLength) {
+			case 0:
+				state.isHaveData = !state.isHaveData;
+				break;
+			default:
+				state.isHaveData = true;
+				break;
+		}
 		return state.productList.filter((item, index) => {
-			if (item.title) {
-				return item;
-			} else {
-				return false;
-			}
+			return item.title.match(data[index].title) ? item : false;
 		});
+	},
+	IS_HAVE_DATA(state) {
+		state.isHaveData = true;
 	},
 };
