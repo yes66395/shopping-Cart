@@ -3,6 +3,11 @@
 
 *注意!如果什麼都沒有，出現Loading文字，極大的可能是api壞掉，api的來源為這<a href="https://fakeapi.platzi.com/en/rest/products">點我</a>
 <br/>
+帳號 : john@mail.com <br/>
+密碼 : changeme
+<br/>
+如果錯誤就在麻煩你登入一次，謝謝。
+<br/>
 左邊的Navigation，有時候文字會突然不一樣，是因為api的問題。見諒。
 <br/>
 完成結果:
@@ -34,10 +39,7 @@
 9. 搜尋功能，查找商品，如找不到該商品，會有文字提醒。缺點就是沒有那麼絲滑
 10. 登入功能。缺點登入第一次可能會錯
 
-帳號 : john@mail.com
-密碼 : changeme
-<br/>
-如果錯誤就在麻煩你登入一次，謝謝。
+
 
 ## 安裝步驟
 ```
