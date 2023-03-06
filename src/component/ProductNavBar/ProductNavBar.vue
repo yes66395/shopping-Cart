@@ -4,7 +4,7 @@
 			<li class="product-nav-item">
 				<span class="product-nav-name" :class="{ active: 0 === curIndex }" @click="getAllProduct(0, 0)">All</span>
 			</li>
-			<li class="product-nav-item" v-for="(productTitle, index) in cateGories" :key="index">
+			<li class="product-nav-item" v-for="(productTitle, index) in cateGories" :key="productTitle.id">
 				<span
 					class="product-nav-name"
 					:class="{ active: index + 1 === curIndex }"
