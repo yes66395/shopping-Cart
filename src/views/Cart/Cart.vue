@@ -37,7 +37,7 @@
 				</tbody>
 			</table>
 		</section>
-		<!---總價格與總數量--->
+		
 		<Caculator />
 	</div>
 </template>
