@@ -34,7 +34,7 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(['cartData'].sort((a, b) => a - b)),
+		...mapState(['cartData']),
 		...mapState(['checkData']),
 		...mapGetters({
 			totalCount: 'getTotalCount',
